@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="569d1c4c-ea5e-4588-8e64-f9fde2361eb0" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MayoForce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MayoForce/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MayoForce/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/MayoForce/wsgi.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,8 +80,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MayoForce/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="259" column="32" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+            <state relative-caret-position="96">
+              <caret line="26" column="7" selection-start-line="26" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="e#310#319#0" expanded="true" />
               </folding>
@@ -143,14 +141,14 @@
       <find>post</find>
       <find>change_</find>
       <find>up</find>
-      <find />
+      <find>{% if user.is</find>
       <find>HOME</find>
       <find>messages</find>
       <find>follo</find>
       <find>newsfeed</find>
       <find>change</find>
       <find>static</find>
-      <find />
+      <find>img s</find>
       <find>timeline</find>
       <find>following</find>
     </findStrings>
@@ -462,6 +460,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50741607" side_tool="true" visible="true" weight="0.37244898" />
@@ -813,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MayoForce/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="259" column="32" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+        <state relative-caret-position="96">
+          <caret line="26" column="7" selection-start-line="26" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="e#310#319#0" expanded="true" />
           </folding>
