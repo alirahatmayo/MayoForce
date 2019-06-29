@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="569d1c4c-ea5e-4588-8e64-f9fde2361eb0" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/MayoForce/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MayoForce/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,8 +80,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MayoForce/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="215">
+              <caret line="162" column="27" lean-forward="true" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
               <folding>
                 <element signature="e#310#319#0" expanded="true" />
               </folding>
@@ -160,14 +160,14 @@
       <find>post</find>
       <find>change_</find>
       <find>up</find>
-      <find />
+      <find>{% if user.is</find>
       <find>HOME</find>
       <find>messages</find>
       <find>follo</find>
       <find>newsfeed</find>
       <find>change</find>
       <find>static</find>
-      <find />
+      <find>img s</find>
       <find>timeline</find>
       <find>following</find>
       <find>secret_</find>
@@ -245,9 +245,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="width" value="654" />
-    <option name="height" value="429" />
+    <option name="x" value="949" />
+    <option name="width" value="980" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -487,14 +487,28 @@
       <option name="project" value="LOCAL" />
       <updated>1561825810715</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Default Changelist">
+      <created>1561826485830</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561826485830</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Default Changelist">
+      <created>1561826906451</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561826906451</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="274919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -850,8 +864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MayoForce/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="215">
+          <caret line="162" column="27" lean-forward="true" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
           <folding>
             <element signature="e#310#319#0" expanded="true" />
           </folding>
