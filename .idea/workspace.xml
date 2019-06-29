@@ -161,14 +161,14 @@
       <find>post</find>
       <find>change_</find>
       <find>up</find>
-      <find>{% if user.is</find>
+      <find />
       <find>HOME</find>
       <find>messages</find>
       <find>follo</find>
       <find>newsfeed</find>
       <find>change</find>
       <find>static</find>
-      <find>img s</find>
+      <find />
       <find>timeline</find>
       <find>following</find>
       <find>secret_</find>
