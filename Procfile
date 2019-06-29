@@ -1,1 +1,1 @@
-web: gunicorn mayoforce.wsgi --log-file -
+web: gunicorn MayoForce.wsgi --log-file -
