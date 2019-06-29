@@ -114,4 +114,4 @@ dmypy.json
 .pyre/
 
 manage.py
-.idea
+.idea/
