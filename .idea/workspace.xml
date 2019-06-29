@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="569d1c4c-ea5e-4588-8e64-f9fde2361eb0" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/mayoforce/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/mayoforce/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.mCustomScrollbar.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jquery.mCustomScrollbar.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/mayoforce/css/jquery.mCustomScrollbar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="374" lean-forward="true" selection-start-line="374" selection-end-line="374" />
+            <state relative-caret-position="69">
+              <caret line="369" column="40" lean-forward="true" selection-start-line="369" selection-start-column="40" selection-end-line="369" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -114,13 +114,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/mayoforce/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="1032" column="21" lean-forward="true" selection-start-line="1032" selection-start-column="21" selection-end-line="1032" selection-end-column="21" />
+            <state relative-caret-position="86">
+              <caret line="1027" column="103" selection-start-line="1027" selection-start-column="103" selection-end-line="1027" selection-end-column="103" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="banner.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/mayoforce/images/banner.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
@@ -153,15 +158,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -190,14 +186,14 @@
       <find>post</find>
       <find>change_</find>
       <find>up</find>
-      <find />
+      <find>{% if user.is</find>
       <find>HOME</find>
       <find>messages</find>
       <find>follo</find>
       <find>newsfeed</find>
       <find>change</find>
       <find>static</find>
-      <find />
+      <find>img s</find>
       <find>timeline</find>
       <find>following</find>
       <find>secret_</find>
@@ -264,8 +260,8 @@
         <option value="$USER_HOME$/mayoforce/MayoForce/settings.py" />
         <option value="$PROJECT_DIR$/MayoForce/wsgi.py" />
         <option value="$PROJECT_DIR$/MayoForce/settings.py" />
-        <option value="$PROJECT_DIR$/static/mayoforce/css/jquery.mCustomScrollbar.css" />
         <option value="$PROJECT_DIR$/static/mayoforce/css/style.css" />
+        <option value="$PROJECT_DIR$/static/mayoforce/css/jquery.mCustomScrollbar.css" />
       </list>
     </option>
   </component>
@@ -319,6 +315,13 @@
               <item name="MayoForce" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="mayoforce" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MayoForce" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MayoForce" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="mayoforce" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MayoForce" type="b2602c69:ProjectViewProjectNode" />
@@ -598,7 +601,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561829347513</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Default Changelist">
+      <created>1561830250972</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1561830250972</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Default Changelist">
+      <created>1561830753363</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1561830753363</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -606,16 +623,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.38251367" side_tool="true" visible="true" weight="0.4217687" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.38251367" side_tool="true" visible="true" weight="0.4217687" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49882904" weight="0.32993197" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.61748636" visible="true" weight="0.4217687" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4918033" weight="0.22789116" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22014052" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22014052" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32983023" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -659,13 +675,6 @@
     <SUITE FILE_PATH="coverage/MayoForce$logic.coverage" NAME="logic Coverage Results" MODIFIED="1557522832095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/templates" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/account/password_change.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/profiles/edit_education.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -822,6 +831,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4250">
           <caret line="269" column="30" selection-start-line="269" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
+          <folding>
+            <element signature="e#1#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -920,13 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/mayoforce/css/jquery.mCustomScrollbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="374" lean-forward="true" selection-start-line="374" selection-end-line="374" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -943,8 +948,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/mayoforce/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="1032" column="21" lean-forward="true" selection-start-line="1032" selection-start-column="21" selection-end-line="1032" selection-end-column="21" />
+        <state relative-caret-position="86">
+          <caret line="1027" column="103" selection-start-line="1027" selection-start-column="103" selection-end-line="1027" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/mayoforce/images/banner.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/mayoforce/css/jquery.mCustomScrollbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="369" column="40" lean-forward="true" selection-start-line="369" selection-start-column="40" selection-end-line="369" selection-end-column="40" />
         </state>
       </provider>
     </entry>
