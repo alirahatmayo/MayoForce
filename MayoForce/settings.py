@@ -14,8 +14,6 @@ import os
 from .email_info import *
 from django.urls import reverse_lazy
 import django_heroku
-from decouple import config
-from dj_database_url import *
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,13 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+SECRET_KEY = '3o*g1f3f&%ax7bm0ly2(yt^yzrm_vi*jrd)fnk42b^d%t1o2m2'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
