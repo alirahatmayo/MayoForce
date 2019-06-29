@@ -1,0 +1,31 @@
+{% extends 'mayoforce/base-timeline.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="col-md-7">
+                <div class="edit-profile-container">
+                <div class="block-title">
+                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>My education</h4>
+                  <div class="line"></div>
+{#                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>#}
+                  <div class="line"></div>
+                </div>
+                <div class="edit-block">
+                  <form method="POST"   id="education" class="form-inline">
+                      {% csrf_token %}
+                        {{ family_form.familychoice|as_crispy_field}}
+                  <br>
+                      {{ family_form.name|as_crispy_field}}
+                      <br>
+                      {{ family_form.m_status|as_crispy_field}}
+
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                  </form>
+                </div>
+                <div class="block-title">
+
+              </div>
+                </div>
+            </div>
+
+{% endblock %}

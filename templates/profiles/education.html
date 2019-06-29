@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    Education
+
+<div class="container">
+{#{% for profile in profile %}#}
+{#    {% profile.m_status %}#}
+{#{% endfor %}#}
+
+{& for messages in &}
+
+{#    <h1>Profile</h1>#}
+    <p>Username: {{ user }}</p>
+{#    <p> School: {{ education.school }}</p>#}
+{#    <p>Qualification: {{ education.qualification }}</p>#}
+{#    <p>Field Of Study: {{ education.fieldOfStudy }}</p>#}
+{#    <p>date from: {{ education.dateFrom }}</p>#}
+{#    <p>date to: {{ education.dateTo }}</p>#}
+{#    <p>graduated: {{ education.gratduated}}</p>#}
+{#    {% if user.profile.image %}#}
+{#    <img src="{{ user.profile.image.url }}" width="240">#}
+{#    {% endif %}#}
+
+    {% for education in education %}
+     <p> School: {{ education.school }}</p>
+    <p>Qualification: {{ education.qualification }}</p>
+    <p>Field Of Study: {{ education.fieldOfStudy }}</p>
+    <p>date from: {{ education.dateFrom }}</p>
+    <p>date to: {{ education.dateTo }}</p>
+    <p>graduated: {{ education.gratduated}}</p>
+
+            <button type="submit"><a href="{%  url 'edit_education' education.id %}">Edit</a></button>
+        <button type="submit"><a href="{%  url 'delete_education' education.id %}"> Delete</a> </button>
+
+
+    {% endfor %}
+
+<button type="submit"><a href="{%  url 'add_education' %}"> Add</a> </button>
+
+</div>
+{% endblock %}

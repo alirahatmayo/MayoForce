@@ -1,0 +1,75 @@
+{% extends 'mayoforce/base-timeline.html' %}
+    <!--Header End-->
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+            <div class="col-md-7">
+
+              <!-- About
+              ================================================= -->
+              <div class="about-profile">
+                <div class="about-content-block">
+                  <h4 class="grey"><i class="ion-ios-information-outline icon-in-title"></i>Personal Information</h4>
+                  <p></p>
+                </div>
+                <div class="about-content-block">
+                  <h4 class="grey"><i class="ion-ios-book-outline icon-in-title"></i>Education</h4>
+
+                    {%   for education in education %}
+                  <div class="organization">
+                    <img src="images/envato.png" alt="" class="pull-left img-org" />
+                    <div class="work-info">
+                      <h5>{{ education.get_qualification_display }}</h5>
+                      <p>{{ education.school }} - <span class="text-grey"> {{ education.dateFrom }} - {{ education.dateTo }}</span></p>
+                    </div>
+                  </div>
+                    {% endfor %}
+                {% if user.profile.id == profile.id %}
+                    <a href="" style="float: right"> edit</a>
+
+                {% endif %}
+                <br>
+
+                </div>
+                <div class="about-content-block">
+                  <h4 class="grey"><i class="ion-ios-location-outline icon-in-title"></i>Location</h4>
+                  <p>{{ profile.city }} , {{ profile.state }}, {{ profile.country }}</p>
+                  <div class="google-maps">
+                    <div id="map" class="map"></div>
+                  </div>
+                    {% if user.profile.id == profile.id %}
+                        <a href="" style="float: right"> edit</a>
+
+                {% endif %}
+                    <br>
+
+                </div>
+                <div class="about-content-block">
+
+                  <h4 class="grey"><i class="ion-ios-heart-outline icon-in-title"></i>Family</h4>
+
+                  <ul class="interests list contact-list">
+                      {% for family in family %}
+                          <li> <span class="font-weight-bold">{{ family.get_familychoice_display }}</span> :  {{ family.name }} </li>
+                      {% endfor %}
+                    </ul>
+                                {% if user.profile.id == profile.id %}
+                                    <a href="" style="float: right"> edit</a>
+
+                {% endif %}
+                    <br>
+
+                </div>
+{#                <div class="about-content-block">#}
+{#                  <h4 class="grey"><i class="ion-ios-chatbubble-outline icon-in-title"></i>Language</h4>#}
+{#                    <ul>#}
+{#                      <li><a href="">Russian</a></li>#}
+{#                      <li><a href="">English</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+              </div>
+            </div>
+
+
+{% endblock %}

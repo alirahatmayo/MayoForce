@@ -1,0 +1,94 @@
+{% extends 'mayoforce/base-timeline.html' %}
+
+{% block content %}
+
+            <div class="col-md-7">
+
+              <!-- Post Create Box
+              ================================================= -->
+
+
+
+              <div class="create-post">
+                <div class="row">
+                {% if user.is_authenticated %}
+                    {% if user.profile == profile %}
+                  <div class="col-md-7 col-sm-7">
+                    <div class="form-group">
+                      <img src="{{ profile.avatar_url|default_if_none:'static/images/empty_avatar.png' }}" alt="" class="profile-photo-md" />
+                        <form method="POST"> {% csrf_token %}
+                      <textarea name="text" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                        </form>
+                    </div>
+                  </div>
+                  <div class="col-md-5 col-sm-5">
+                    <div class="tools">
+                      <ul class="publishing-tools list-inline">
+                        <li><a href="#"><i class="ion-compose"></i></a></li>
+                        <li><a href="#"><i class="ion-images"></i></a></li>
+                        <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
+                        <li><a href="#"><i class="ion-map"></i></a></li>
+                      </ul>
+                      <button type="submit" name="save" class="btn btn-primary pull-right">Publish</button>
+                    </div>
+                  </div>
+                        </form>
+                    {% endif %}
+                {% endif %}
+
+                </div>
+              </div><!-- Post Create Box End-->
+              <!-- Post Content
+              ================================================= -->
+            {% for post in posts %}
+
+
+              <div class="post-content">
+
+                <!--Post Date-->
+                <div class="post-date hidden-xs hidden-sm">
+                  <h5>{{ profile.user.first_name }} </h5>
+                  <p class="text-grey">{{ post.created_date }}</p>
+                </div><!--Post Date End-->
+
+                <div class="post-container">
+                  <img src="{{ post.author.avatar_url|default_if_none:'../static/images/empty_avatar.png' }}" alt="user" class="profile-photo-md pull-left" />
+                  <div class="post-detail">
+                    <div class="user-info">
+                      <h5><a href="{% url 'timeline' post.author.id %}" class="profile-link">{{ post.author.user.first_name }}</a> <span class="following">following</span></h5>
+                      <p class="text-muted">Published at {{ post.created_date }}</p>
+                    </div>
+                    <div class="reaction">
+                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
+                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-text">
+                        <p>{{ post.text }}</p>
+                    </div>
+                    <div class="line-divider"></div>
+                      {% for comment in post.comments.all %}
+
+                    <div class="post-comment">
+
+                      <img src="{{ comment.author.avatar_url|default_if_none:'../static/images/empty_avatar.png' }}" alt="" class="profile-photo-sm" />
+                      <p><a href="{% url 'timeline' comment.author.id %}" class="profile-link">{{ comment.author.user.first_name }} </a><i class="em em-laughing"></i> {{ comment.text }}</p>
+
+                    </div>
+                      {% endfor %}
+                      <div class="line-divider"></div>
+
+
+{#                    <div class="post-comment">#}
+{#                      <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />#}
+{#                      <input type="text" class="form-control" placeholder="Post a comment">#}
+{#                    </div>#}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+            </div>
+
+
+{% endblock %}

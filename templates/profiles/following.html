@@ -1,0 +1,37 @@
+{% extends 'mayoforce/base-timeline.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="col-md-7">
+<div class="friend-list">
+
+        {% for following in  following %}
+ <div class="col-md-6 col-sm-6">
+                    <div class="friend-card">
+
+                  	<img src="{% static 'images/banner.png' %}" alt="profile-cover" class="img-responsive cover" />
+                  	<div class="card-info">
+                      <img src="{{ following.following.avatar_url|default_if_none:'../static/images/empty_avatar.png' }}" alt="user" class="profile-photo-lg" />
+                      <div class="friend-info">
+                          {% if following.following.id in user_following  %}
+                        <a href="{% url 'unfollow' following.following.id %}" class="pull-right text-green">Un-Follow</a>
+                              {% else %}
+                              <a href="{% url 'follow' following.following.id %}" class="pull-right text-green">Follow</a>
+
+                          {% endif %}
+                      	<h5><a href="{% url 'timeline' following.following.id %}" class="profile-link">{{ following.following.user.first_name }} {{ following.following.user.last_name }}</a></h5>
+                      	<p>Profession</p>
+                      </div>
+                    </div>
+                        </div>
+
+            </div>
+            {% endfor %}
+
+                </div>
+            	</div>
+
+
+            <div class="col-md-2 static">
+            </div>
+{% endblock %}

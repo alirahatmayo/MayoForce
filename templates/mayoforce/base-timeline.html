@@ -1,0 +1,274 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+
+{% load i18n %}
+{% load account %}
+{% load account socialaccount %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="This is social network html5 template available in themeforest......" />
+		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
+		<meta name="robots" content="index, follow" />
+		{% block title %}<title>Mayo Force | {{ profile.user.username }}</title> {% endblock %}
+
+    <!-- Stylesheets
+    ================================================= -->
+		<link rel="stylesheet" href="{% static 'mayoforce/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'mayoforce/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'mayoforce/css/ionicons.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'mayoforce/css/font-awesome.min.css' %}" />
+    <link href="{% static 'mayoforce/css/emoji.css' %}">
+
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
+	</head>
+
+{% block navbar %}
+    <header id="header">
+      <nav class="navbar navbar-default navbar-fixed-top menu">
+        <div class="container">
+
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/mayoforce-logo.png' %}" alt="logo" /></a>
+          </div>
+{% if user.is_authenticated %}
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right main-menu">
+                <li class="nav-item"><a href="{% url 'home' %}">News Feeds</a></li>
+                <li class="nav-item"><a href="{% url 'timeline' user.profile.id %}">Profile</a></li>
+
+
+              <li class=" nav-item dropdown">
+                <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span><img src="images/down-arrow.png" alt="" /></span></a>
+                <ul class="dropdown-menu page-list">
+                  <li><a href="{% url 'timeline' user.profile.id %}">Profile</a></li>
+                  <li><a href="{% url 'logout' %}">Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-sm">
+              <div class="form-group">
+                <i class="icon ion-android-search"></i>
+                <input type="text" class="form-control" placeholder="Search friends, photos, videos">
+              </div>
+            </form>
+          </div><!-- /.navbar-collapse -->
+    {% else %}
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right main-menu">
+                    <li class="nav-item"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                <li class="nav-item"><a href="{% url 'account_login' %}">Sign In</a></li>
+            </ul>
+     </div>
+
+{% endif %}
+        </div><!-- /.container -->
+      </nav>
+    </header>
+    <!--Header End-->
+{% endblock %}
+
+        <div class="container">
+
+      <!-- Timeline
+      ================================================= -->
+      <div class="timeline">
+        <div class="timeline-cover">
+
+          <!--Timeline Menu for Large Screens-->
+          <div class="timeline-nav-bar hidden-sm hidden-xs">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="profile-info">
+                  <img src="{{ profile.avatar_url|default_if_none:'../static/images/empty_avatar.png' }}" alt="" class="img-responsive profile-photo" />
+                  <h3>{{ profile.user.first_name }} {{ profile.user.last_name }}</h3>
+                  <p class="text-muted"> Profession</p>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <ul class="list-inline profile-menu">
+                  <li><a href="{% url 'timeline' profile.id %}">Timeline</a></li>
+                  <li><a href="{% url 'about' profile.id %}">About</a></li>
+                  <li><a href="{% url 'about' profile.id %}">family</a></li>
+                    <li><a href="{% url 'followers' profile.id %}">Followers</a></li>
+
+                  <li><a href="{% url 'following' profile.id %}">Following</a></li>
+                </ul>
+                <ul class="follow-me list-inline">
+                  <li>{{ followers }} people following {{ profile.user.first_name }}</li>
+                    {% if user.profile != profile %}
+                        {% if profile in user.profile.friends.following %}
+                            <li><button class="btn-primary" href="{% url 'unfollow' profile.id %}">Un-Follow</button></li>
+
+                        {% else %}
+
+                        <li><button class="btn-primary" href="{% url 'follow' profile.id %}">Follow</button></li>
+                            {% endif %}
+
+                    {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div><!--Timeline Menu for Large Screens End-->
+
+          <!--Timeline Menu for Small Screens-->
+          <div class="navbar-mobile hidden-lg hidden-md">
+            <div class="profile-info">
+              <img src="{{ profile.avatar_url|default_if_none:'../static/images/empty_avatar.png' }}" alt="" class="img-responsive profile-photo" />
+              <h4>{{ profile.user.first_name }} {{ profile.user.last_name }}</h4>
+              <p class="text-muted">Profession</p>
+            </div>
+            <div class="mobile-menu">
+              <ul class="list-inline">
+                <li><a href="#" >Timeline</a></li>
+                <li><a href="timeline-about.html">About</a></li>
+                <li><a href="timeline-album.html">Family</a></li>
+                  <li><a href="timeline-album.html">Education</a></li>
+                <li><a href="timeline-friends.html">Friends</a></li>
+              </ul>
+              <button class="btn-primary">Add Friend</button>
+            </div>
+          </div><!--Timeline Menu for Small Screens End-->
+
+        </div>
+        <div id="page-contents">
+          <div class="row">
+          {% if user.profile.id == profile.id and 'password' not in request.path and 'timeline' not in request.path %}
+            <div class="col-md-3">
+                <ul class="edit-menu">
+              	<li {% if 'basic' in request.path %} class="active"{% endif %}><i class="icon ion-ios-information-outline"></i><a href="{% url 'edit_basic' %}">Basic Information</a></li>
+              	<li{% if 'education' in request.path %} class = "active"{% endif %}><i class="icon ion-ios-briefcase-outline"></i><a href="{% url 'add_edu_work'  %}">Education and Work</a></li>
+              	<li {% if 'family' in request.path %} class="active"{% endif %}><i class="icon ion-ios-heart-outline"></i><a href="{% url 'add_family' %}">My Family</a></li>
+                <li{% if 'settings' in request.path %} class="active"{% endif %}><i class="icon ion-ios-settings"></i><a href="#">Account Settings</a></li>
+              	<li{% if 'password' in request.path %} class="active"{% endif %}><i class="icon ion-ios-locked-outline"></i><a href="{% url 'account_change_password' %}">Change Password</a></li>
+              </ul>
+            </div>
+          {% endif  %}
+            <div class="col-md-3"></div>
+
+{% block content %}
+{#this is where the content will fall#}
+{% endblock %}
+
+
+{% block activity %}
+                <div class="col-md-2 static">
+              <div id="sticky-sidebar">
+                <h4 class="grey">Sarah's activity</h4>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
+                    <p class="text-muted">5 mins ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
+                    <p class="text-muted">an hour ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
+                    <p class="text-muted">4 hours ago</p>
+                  </div>
+                </div>
+                <div class="feed-item">
+                  <div class="live-activity">
+                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
+                    <p class="text-muted">a day ago</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+{% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% block footer %}
+    <!-- Footer
+    ================================================= -->
+    <footer id="footer">
+      <div class="container">
+      	<div class="row">
+          <div class="footer-wrapper">
+            <div class="col-md-3 col-sm-3">
+              <a href=""><img src="images/logo-black.png" alt="" class="footer-logo" /></a>
+              <ul class="list-inline social-icons">
+              	<li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+              	<li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+              	<li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
+              	<li><a href="#"><i class="icon ion-social-pinterest"></i></a></li>
+              	<li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-2 col-sm-2">
+
+            </div>
+            <div class="col-md-2 col-sm-2">
+
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <h5>About</h5>
+              <ul class="footer-links">
+                <li><a href="">About us</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms</a></li>
+                <li><a href="">Help</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-3">
+              <h5>Contact Us</h5>
+              <ul class="contact">
+                <li><i class="icon ion-ios-telephone-outline"></i>+1 (416) 543 6786</li>
+                <li><i class="icon ion-ios-email-outline"></i>info@mayoforce.com</li>
+                <li><i class="icon ion-ios-location-outline"></i>7171 Goreway Dr, Mississauga, ON, Canada</li>
+              </ul>
+            </div>
+          </div>
+      	</div>
+      </div>
+      <div class="copyright">
+        <p>Mayo Force © 2019. All rights reserved</p>
+      </div>
+		</footer>
+
+    <!--preloader-->
+    <div id="spinner-wrapper">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Scripts
+    ================================================= -->
+{#    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMXfmDn0VlqWIyoOxK8997L-amWbUPiQ&callback=initMap"></script>#}
+    <script src="{% static 'mayoforce/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'mayoforce/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'mayoforce/js/jquery.sticky-kit.min.js' %}"></script>
+    <script src="{% static 'mayoforce/js/jquery.scrollbar.min.js' %}"></script>
+    <script src="{% static 'mayoforce/js/script.js' %}"></script>
+  </body>
+</html>
+
+{% endblock %}

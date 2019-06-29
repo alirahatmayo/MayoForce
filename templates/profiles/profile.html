@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{#{% block profile_banner %}#}
+{#    #}
+{#{% endblock %}#}
+
+{% block content %}
+
+
+
+<title>Profile</title>
+{#{% endblock %}#}
+{##}
+{#{% block body %}#}
+<div class="container">
+{#{% for profile in profile %}#}
+{#    {% profile.m_status %}#}
+{#{% endfor %}#}
+
+    <h1>Profile</h1>
+    <p>Username: {{ user }}</p>
+    <p>First name: {{ user.first_name }}</p>
+    <p>Last name: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Marital Status: {{ profile.m_status }}</p>
+    <p>Birth Date: {{ profile.birth_date }}</p>
+    <p>City: {{ profile.city }}</p>
+{#    {% if user.profile.image %}#}
+{#    <img src="{{ user.profile.image.url }}" width="240">#}
+{#    {% endif %}#}
+
+
+    <button type="submit"><a href="{%  url 'edit_profile' %}"> click here</a> Edit</button>
+
+
+
+<div>
+{##}
+    {% for post in posts %}
+        <p>
+        {{ post.author }}</p>
+       <p> {{ post.title }}</p>
+       <p> {{ post.text }}</p>
+       <p> {{ post.created_date }}</p>
+    {% endfor %}
+
+
+
+
+</div>
+</div>
+{#    {% endfor %}#}
+
+
+
+{% endblock %}
