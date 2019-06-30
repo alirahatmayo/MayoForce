@@ -62,7 +62,7 @@ INSTALLED_APPS = [
 
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 AUTH_USER_MODEL = 'users.CustomUser' # new
 
